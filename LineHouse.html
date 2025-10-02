@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Your Project — Modern Townhomes</title>
+<meta name="description" content="Original demo site inspired by a real-estate landing layout with hero media, features, location, and a lead-capture form." />
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0b1220; --muted:#5b667a; --ring:#e7eaf0;
+    --card:#f7f9fc; --accent:#0b72ff; --accent-ink:#fff;
+    --maxw:1100px; --pad:20px; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg)}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad)}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header / Nav */
+  header{position:sticky; top:0; z-index:10; background:#fffcc0; background:#fff; border-bottom:1px solid var(--ring)}
+  nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
+  .brand{font-weight:800; letter-spacing:.2px; color:var(--ink); text-decoration:none}
+  .navlinks{list-style:none; display:flex; gap:16px; margin:0; padding:0}
+  .navlinks a{color:var(--ink)}
+  .btn{display:inline-block; padding:10px 14px; border-radius:10px; background:var(--accent); color:var(--accent-ink); border:1px solid var(--accent)}
+  .btn:hover{text-decoration:none; filter:brightness(.95)}
+
+  /* Hero */
+  .hero-wrap{position:relative; overflow:hidden; border-bottom:1px solid var(--ring)}
+  .hero-media{position:relative; aspect-ratio:16/9; background:#000}
+  .hero-media video,.hero-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+  .hero-content{position:relative; z-index:1; padding:48px 0}
+  .hero-card{background:rgba(255,255,255,.85); backdrop-filter:saturate(1.2) blur(6px); border:1px solid var(--ring); border-radius:var(--radius); padding:22px; max-width:720px}
+  .eyebrow{font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  h1{margin:.2em 0 .4em; font-size:clamp(28px,4vw,42px); line-height:1.15}
+  .lead{color:var(--muted); margin:0 0 14px}
+
+  /* Sections */
+  section{padding:36px 0}
+  h2{font-size:26px; margin:0 0 10px}
+  .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr)}
+  .col-12{grid-column:span 12}
+  .col-6{grid-column:span 6}
+  @media (max-width:900px){ .col-6{grid-column:span 12} }
+
+  .card{background:var(--card); border:1px solid var(--ring); border-radius:var(--radius); padding:18px}
+  .imgcard{position:relative; overflow:hidden; border-radius:var(--radius); border:1px solid var(--ring); background:#eef3fb}
+  .imgcard img{display:block; width:100%; height:260px; object-fit:cover}
+  .muted{color:var(--muted)}
+
+  /* Form */
+  form{display:grid; gap:14px}
+  .row{display:grid; gap:14px; grid-template-columns:1fr 1fr}
+  @media (max-width:700px){ .row{grid-template-columns:1fr} }
+  label{font-weight:600; font-size:14px}
+  input, select, textarea{
+    width:100%; padding:12px; border-radius:10px; border:1px solid var(--ring); background:#fff;
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid #cfe1ff; border-color:#cfe1ff}
+  .help{font-size:12px; color:var(--muted)}
+  .legal{font-size:12px; color:var(--muted)}
+  .required::after{content:" *"; color:#d00}
+
+  /* Footer */
+  footer{border-top:1px solid var(--ring); padding:20px 0; color:var(--muted)}
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="brand" href="#">YourProject</a>
+        <ul class="navlinks" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#area">Area</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+        <a class="btn" href="#register">Register Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero-wrap">
+    <div class="hero-media" aria-hidden="true">
+      <!-- If you have a video, place it here. Otherwise the <img> will show. -->
+      <!-- <video autoplay muted loop playsinline poster="hero.jpg">
+        <source src="hero.mp4" type="video/mp4" />
+      </video> -->
+      <img src="hero.jpg" alt="" />
+    </div>
+    <div class="container hero-content">
+      <div class="hero-card">
+        <div class="eyebrow">Contemporary Townhomes</div>
+        <h1>Architecture for light, space, and calm living</h1>
+        <p class="lead">Thoughtful geometry, balanced proportions, and open interiors. A curated collection of modern homes on the West Side.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="#register">Register Interest</a>
+          <a href="#about">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- About / Features -->
+    <section id="about">
+      <div class="container">
+        <h2>Design that lives beautifully</h2>
+        <p class="muted">Homes ranging from smart one-bedroom layouts to generous family plans, with storage, natural light, and calm materials.</p>
+        <div class="grid" style="margin-top:14px">
+          <div class="col-6 imgcard">
+            <img src="feature-1.jpg" alt="Warm interior with natural light" />
+          </div>
+          <div class="col-6 imgcard">
+            <img src="feature-2.jpg" alt="Exterior facade with modern lines" />
+          </div>
+          <div class="col-6 card">
+            <h3>Well-scaled living</h3>
+            <p>Efficient floorplans with room for full-size furnishings, ensuite baths, and thoughtful storage solutions.</p>
+          </div>
+          <div class="col-6 card">
+            <h3>Crafted details</h3>
+            <p>Simple materials, durable finishes, and a restrained palette designed for longevity and ease.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Area / Location -->
+    <section id="area" style="background:#fff">
+      <div class="container">
+        <h2>A connected West-Side setting</h2>
+        <p class="muted">Close to parks, community amenities, schools, retail, and rapid transit—everything within easy reach.</p>
+        <div class="grid" style="margin-top:14px">
+          <div class="col-6 imgcard">
+            <img src="area-1.jpg" alt="Tree-lined street near parks" />
+          </div>
+          <div class="col-6 imgcard">
+            <img src="area-2.jpg" alt="Shops and community hubs nearby" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register -->
+    <section id="register">
+      <div class="container">
+        <h2>Register your interest</h2>
+        <p class="muted">Tell us a little about you. We’ll follow up with availability and updates.</p>
+        <form id="lead-form" novalidate>
+          <div class="row">
+            <div>
+              <label class="required" for="firstName">First Name</label>
+              <input id="firstName" name="firstName" type="text" required />
+            </div>
+            <div>
+              <label class="required" for="lastName">Last Name</label>
